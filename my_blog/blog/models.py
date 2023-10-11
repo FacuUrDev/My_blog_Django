@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
+#Se crea una tupla para el estado de los post
 STATUS = (
     (0,"Draft"),
     (1,"Publish")
 )
 
+#Se crea un modelo para los post
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -21,3 +22,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+#Se crea un modelo para los comentarios   
+class Comment(models.Model):
+    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.body, self.name)
