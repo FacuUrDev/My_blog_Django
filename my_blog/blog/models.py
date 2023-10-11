@@ -22,6 +22,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    #Se crea una funcion para obtener la url absoluta del post
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse("post_detail", kwargs={"slug": str(self.slug)})
+    
+
 
 #Se crea un modelo para los comentarios   
 class Comment(models.Model):
