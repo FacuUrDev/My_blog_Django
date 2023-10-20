@@ -1,0 +1,13 @@
+<script>
+    // Inicializa las funciones de Bootstrap
+    $(document).ready(function() {
+      $('[data-toggle="collapse"]').on('click', function() {
+        var target = $(this).data('target');
+        if ($(target).hasClass('show')) {
+          $(target).collapse('hide');
+        } else {
+          $(target).collapse('show');
+        }
+      });
+    });
+  </script>
