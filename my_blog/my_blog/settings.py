@@ -49,6 +49,12 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+    'iframeCSS': ('/static/summernote_custom.css',),
+    # Otras configuraciones de Summernote
+}
+SUMMERNOTE_THEME = 'bs5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
