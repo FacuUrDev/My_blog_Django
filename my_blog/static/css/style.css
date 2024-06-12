@@ -115,6 +115,8 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(96 165 250/0));
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 
+    margin-left: 8px;
+    text-align:justify;
 }
 
 .card {
