@@ -13,6 +13,9 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
+    
+class AboutMe(generic.TemplateView):
+        template_name = 'about_me.html'
 
 def post_detail(request, slug):
     template_name = 'post_detail.html'
