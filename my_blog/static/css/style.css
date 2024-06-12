@@ -101,6 +101,8 @@
     font-size: 18px;
     font-weight: 300;
     color: var(--color3);
+    margin-left: 8px;
+    text-align:justify;
 }
 
 .card {
